@@ -320,7 +320,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-08-10 23:47:58" itemprop="dateModified" datetime="2022-08-10T23:47:58+08:00">2022-08-10</time>
+      <time title="修改时间：2022-08-11 17:53:11" itemprop="dateModified" datetime="2022-08-11T17:53:11+08:00">2022-08-11</time>
     </span>
 
   
@@ -423,7 +423,7 @@
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> -F		<span class="comment">#-F区分文件夹和文件</span></span><br><span class="line"><span class="built_in">ls</span> Documents/ -F -R		<span class="comment">#-R列出内容</span></span><br><span class="line"><span class="built_in">ls</span> -FR</span><br><span class="line"><span class="comment">#文件扩展匹配符</span></span><br><span class="line"><span class="built_in">ls</span> -l xxx*	<span class="comment">#找到xxx开头的文件 </span></span><br><span class="line"><span class="built_in">ls</span> -l xxx?	<span class="comment"># *代表多个符号，？代表一个符号</span></span><br><span class="line"><span class="comment">#元字符通配符</span></span><br><span class="line"><span class="built_in">ls</span> -l f[a-x]ank.txt</span><br><span class="line"><span class="built_in">ls</span> -l f[!a-x]ank.txt	<span class="comment">#取反</span></span><br></pre></td></tr></table></figure>
 
-<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/7_F9%60ACQC%607_I~MLVGHWB56.png" alt="7_F9`ACQC`7_I~MLVGHWB56"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/7_F9%60ACQC%607_I%7EMLVGHWB56.png" alt="7_F9`ACQC`7_I~MLVGHWB56"></p>
 <p>文件扩展匹配符  *  ?</p>
 <p>元字符通配符  []</p>
 <p><img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/ZFBGZ6I1.png" alt="ZFBGZ6I1"></p>
@@ -443,7 +443,7 @@
 <h2 id="8-ln链接"><a href="#8-ln链接" class="headerlink" title="8.ln链接"></a>8.ln链接</h2><p>符号链接（软链接）<strong>Symbolic link</strong>（soft links）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s 1.java 1_linkfile	<span class="comment">#创建软链接（多）</span></span><br><span class="line"><span class="built_in">ln</span> 1.java 2_linkfile	<span class="comment">#创建硬链接</span></span><br></pre></td></tr></table></figure>
 
-<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/JHJJ%24_JFL.png" alt="JHJJ$_JFL"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/JHJJ%2524_JFL.png" alt="JHJJ$_JFL"></p>
 <p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/aaofaofa.jpg" alt="aaofaofa"></p>
 <p>cp命令复制后果</p>
 <p>复制的是链接文件</p>
@@ -1138,7 +1138,99 @@
 <p>6.关闭不需要的软件</p>
 <p>……..</p>
 <p>初始化的操作写成脚本，所有的服务器只需要执行这个脚本</p>
-<h2 id="9-WEB服务"><a href="#9-WEB服务" class="headerlink" title="9.WEB服务"></a>9.WEB服务</h2>
+<h2 id="9-WEB服务"><a href="#9-WEB服务" class="headerlink" title="9.WEB服务"></a>9.WEB服务</h2><h3 id="1-Apache基本使用"><a href="#1-Apache基本使用" class="headerlink" title="1.Apache基本使用"></a>1.Apache基本使用</h3><h4 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h4><p>/var/www/html 默认的网站发布目录</p>
+<p>网站代码存放的目录</p>
+<p>自定义网站发布目录</p>
+<p>index.html 默认的主页名称</p>
+<p>/etc/httpd/conf/ 存放apache的主配置文件</p>
+<p>httpd.conf 主配置文件名称</p>
+<p>/etc/httpd/conf.d/ 存放apache的子配置文件(apache虚拟主机配置文件)</p>
+<p>*.conf</p>
+<h4 id="2-配置文件"><a href="#2-配置文件" class="headerlink" title="2.配置文件"></a>2.配置文件</h4><p>文件位置：/etc/httpd/conf/httpd.conf</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/httpd/conf/httpd.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">serverRoot <span class="string">&quot;/etc/httpd&quot;</span>	# 存放配置文件的目录</span><br><span class="line"></span><br><span class="line">Listen <span class="number">80</span>	# Apache服务监听端口</span><br><span class="line"></span><br><span class="line">User apache	# 子进程的用户</span><br><span class="line"></span><br><span class="line">Group apache	# 子进程的组</span><br><span class="line"></span><br><span class="line">ServerAdmin root@localhost	# 设置管理员邮件地址</span><br><span class="line"></span><br><span class="line">DocumentRoot <span class="string">&quot;/var/www/html&quot;</span>	# 网站家目录</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811104456712.png" alt="image-20220811104456712"></p>
+<p>设置DocumentRoot指定目录的属性</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory <span class="string">&quot;/var/www/html&quot;</span>&gt;	# 网站容器开始标识</span><br><span class="line"></span><br><span class="line">Options Indexes FollowSymLinks	# 找不到主页时，以目录的方式呈现，并允许链接到网站根目录以外</span><br><span class="line"></span><br><span class="line">AllowOverride <span class="keyword">all</span>	# none不使用.htaccess控制,<span class="keyword">all</span>允许</span><br><span class="line"></span><br><span class="line">Require <span class="keyword">all</span> granted	# granted表示运行所有访问，denied表示拒绝所有访问</span><br><span class="line"></span><br><span class="line">&lt;/Directory&gt;	# 容器结束</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811105103794.png" alt="image-20220811105103794"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811105214184.png" alt="image-20220811105214184"></p>
+<p>%h：访问者IP地址</p>
+<p>%l：</p>
+<p>%u：访问user</p>
+<p>%t：时间</p>
+<p>&quot;%r&quot; ：请求方式</p>
+<p>%&gt;s ：请求url</p>
+<p>%b ：http版本</p>
+<p>\“%{Referer}i\“ ：状态码</p>
+<p>\“%{User-Agent}i\“ ：客户端信息</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811114927373.png" alt="image-20220811114927373"></p>
+<h4 id="3-创建子配置文件"><a href="#3-创建子配置文件" class="headerlink" title="3.创建子配置文件"></a>3.创建子配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /etc/httpd/conf.d/</span><br><span class="line"><span class="built_in">touch</span> web.conf</span><br><span class="line">vim web.conf</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811140605411.png" alt="image-20220811140605411"></p>
+<p>在httpd.conf添加87监听端口，重载服务</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Listen <span class="number">87</span></span><br><span class="line"></span><br><span class="line">systemctl reload httpd</span><br></pre></td></tr></table></figure>
+
+<p>进入/mnt/project/添加index.html文件，查看是否成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /mnt/project/</span><br><span class="line"><span class="built_in">touch</span> index.html</span><br><span class="line"></span><br><span class="line">curl 10.36.139.62:87</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811141112424.png" alt="image-20220811141112424"></p>
+<h4 id="4-基于端口的虚拟主机"><a href="#4-基于端口的虚拟主机" class="headerlink" title="4. 基于端口的虚拟主机"></a>4. 基于端口的虚拟主机</h4><p><strong>保证IP、域名一致</strong></p>
+<p>创建三个子配置文件</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811145804042.png" alt="image-20220811145804042"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811145827412.png" alt="image-20220811145827412"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811145840362.png" alt="image-20220811145840362"></p>
+<p>在/etc/httpd/conf/httpd.conf添加90、91、93端口</p>
+<p>在mnt下创建对应文件</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811150040044.png" alt="image-20220811150040044"></p>
+<p>在浏览器分别访问IP对应端口号：</p>
+<p>10.36.139.62:90</p>
+<p>10.36.139.62:91</p>
+<p>10.36.139.62:93</p>
+<h4 id="5-基于域名的虚拟主机"><a href="#5-基于域名的虚拟主机" class="headerlink" title="5.基于域名的虚拟主机"></a>5.基于域名的虚拟主机</h4><p><strong>保证端口、IP一致</strong></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154305746.png" alt="image-20220811154305746"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154331515.png" alt="image-20220811154331515"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154354460.png" alt="image-20220811154354460"></p>
+<p>在windows中C:\Windows\System32\drivers\etc\hosts.ics</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">10.36.139.62 www.blog.com www.bbs0.com www.game.com</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154558293.png" alt="image-20220811154558293"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154630512.png" alt="image-20220811154630512"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811154652788.png" alt="image-20220811154652788"></p>
+<h4 id="6-基于IP的虚拟主机"><a href="#6-基于IP的虚拟主机" class="headerlink" title="6.基于IP的虚拟主机"></a>6.基于IP的虚拟主机</h4><p><strong>保证域名、端口一致</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ip a a 10.36.139.251/24 dev ens33</span><br><span class="line">ip a a 10.36.139.252/24 dev ens33</span><br><span class="line">ip a a 10.36.139.253/24 dev ens33</span><br></pre></td></tr></table></figure>
+
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811170521789.png" alt="image-20220811170521789"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811170546864.png" alt="image-20220811170546864"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811170606553.png" alt="image-20220811170606553"></p>
+<p>重启服务，输入三个ip查看内容</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811170801998.png" alt="image-20220811170801998"></p>
+<h4 id="7-基于用户的访问控制"><a href="#7-基于用户的访问控制" class="headerlink" title="7.基于用户的访问控制"></a>7.基于用户的访问控制</h4><p>创建用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">htpasswd -c /etc/httpd/password yang</span><br></pre></td></tr></table></figure>
+
+<p>输入两次密码</p>
+<p>更改文件</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811172531335.png" alt="image-20220811172531335"></p>
+<p>AllowOverride AuthConfig 启用用户的访问控制</p>
+<p>AuthType Basic 认证类型 默认Basic</p>
+<p>AuthBasicProvider file 可选参数 认证内容来自于文件</p>
+<p>AuthUserFile “/etc/httpd/password” 存放用户和密码的文件</p>
+<p>Require user xingdian 指定可以访问的用户</p>
+<p>所有的配置结束后，重新启动服务，浏览器访问验证：</p>
+<p><img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811172709426.png" alt="image-20220811172709426"></p>
+<p>输入yang 123</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811172801509.png" alt="image-20220811172801509"></p>
+<h4 id="8-rewrite规则"><a href="#8-rewrite规则" class="headerlink" title="8.rewrite规则"></a>8.rewrite规则</h4><p>编辑game.conf文件，更改windows端hosts文件</p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811174653527.png" alt="image-20220811174653527"></p>
+<p>R=301 强制外部重定向</p>
+<p>NC 不区分大小写</p>
+<p>[OR] 或者</p>
+<p>在浏览器地址栏输入<a target="_blank" rel="noopener" href="http://www.blog3366.com/">http://www.blog3366.com</a></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811175045269.png" alt="image-20220811175045269"></p>
+<p> <img src="https://typora3366.oss-cn-shenzhen.aliyuncs.com/image-20220811175100352.png" alt="image-20220811175100352"></p>
+
       
     </div>
 
